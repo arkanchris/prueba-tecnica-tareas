@@ -3,7 +3,7 @@ import { registerUser } from "../api/tasks.api";
 import { useNavigate, Link } from "react-router-dom";
 
 export function RegisterPage() {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = handleSubmit(async (data) => {
@@ -36,10 +36,12 @@ export function RegisterPage() {
                             <input
                                 type="text"
                                 placeholder="Elige un nombre de usuario"
-                                {...register("username", { required: true })}
+                                {...register("username", { required: "El usuario es requerido" })}
                                 className="form-input"
                             />
+                            {errors.username && <span className="form-error">{errors.username.message}</span>}
                         </div>
+
                         <div className="form-group">
                             <label className="form-label">Email <span className="optional">(opcional)</span></label>
                             <input
@@ -49,15 +51,24 @@ export function RegisterPage() {
                                 className="form-input"
                             />
                         </div>
+
                         <div className="form-group">
                             <label className="form-label">Contraseña</label>
                             <input
                                 type="password"
                                 placeholder="Mínimo 8 caracteres"
-                                {...register("password", { required: true })}
+                                {...register("password", {
+                                    required: "La contraseña es requerida",
+                                    minLength: {
+                                        value: 8,
+                                        message: "La contraseña debe tener mínimo 8 caracteres"
+                                    }
+                                })}
                                 className="form-input"
                             />
+                            {errors.password && <span className="form-error">{errors.password.message}</span>}
                         </div>
+
                         <button type="submit" className="btn-auth">
                             Crear cuenta →
                         </button>

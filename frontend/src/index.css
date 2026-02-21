@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ─── Variables ─────────────────────────────────────── */
 :root {
     --bg: #0a0a0f;
     --surface: #13131a;
@@ -15,7 +14,6 @@
     --radius: 12px;
 }
 
-/* ─── Reset ─────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -33,7 +31,6 @@ body {
     min-height: 100vh;
 }
 
-/* ─── AUTH PAGES ─────────────────────────────────────── */
 .auth-page {
     display: flex;
     min-height: 100vh;
@@ -166,7 +163,6 @@ body {
     text-decoration: underline;
 }
 
-/* ─── FORM INPUTS ────────────────────────────────────── */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -209,7 +205,6 @@ body {
     color: var(--muted);
 }
 
-/* ─── MAIN APP HEADER ────────────────────────────────── */
 .page-wrapper {
     min-height: 100vh;
     background: var(--bg);
@@ -286,14 +281,12 @@ body {
     border-color: var(--accent2);
 }
 
-/* ─── MAIN CONTENT ───────────────────────────────────── */
 .main-content {
     padding: 40px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* ─── STATS ──────────────────────────────────────────── */
 .stats-row {
     display: flex;
     gap: 16px;
@@ -334,7 +327,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ─── FILTERS ────────────────────────────────────────── */
 .filter-row {
     display: flex;
     gap: 8px;
@@ -363,7 +355,6 @@ body {
     color: white;
 }
 
-/* ─── TASKS GRID ─────────────────────────────────────── */
 .tasks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -377,7 +368,6 @@ body {
     font-size: 16px;
 }
 
-/* ─── TASK CARD ──────────────────────────────────────── */
 .task-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -509,7 +499,6 @@ body {
     color: var(--accent2);
 }
 
-/* ─── FORM PAGE ──────────────────────────────────────── */
 .form-page {
     min-height: 100vh;
     background: var(--bg);
@@ -594,7 +583,6 @@ body {
     box-shadow: 0 8px 24px rgba(108, 99, 255, 0.3);
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 768px) {
     .auth-left {
         display: none;
@@ -615,4 +603,10 @@ body {
     .stats-row {
         flex-direction: column;
     }
+}
+
+.form-error {
+    color: #ff6584;
+    font-size: 12px;
+    margin-top: 2px;
 }
